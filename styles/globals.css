@@ -137,11 +137,21 @@
     #svg-cards{
         width: 100%;
     }
-    #anim_cards path {
+    .anim_card_front path {
         stroke-width: 1.7px;
         stroke-dashoffset: 0px;
         stroke: #fff;
         fill: var(--card-first);
+    }
+    .anim_card_front, .anim_card_back {
+        -webkit-transition:  transform 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+        -moz-transition:  transform 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+        -o-transition:  transform 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+        -ms-transition:  transform 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+        transition: transform 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25) !important;
+    }
+    #card_slider g{
+        transition: transform .4s ease-in-out;
     }
     path#top,
     path#bottom {

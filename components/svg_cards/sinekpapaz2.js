@@ -1,21 +1,12 @@
 export default function SinekPapaz(props) {
     
 	return (
-		   <>
-		   <svg
-			   width={props.width}
-			   height={props.height}
-			   id="svg2"
-			   style={props.stylies}
-			   onClick={props.mouseclick}
-			   >
-   
-			   <g
-				   id="layer1"
-				   style={{transform: 'translatey(-720px)'}}
-				   >
-				   <g
-				   id="g1517">
+		   	<>
+			   	<g
+					className="anim_card_back"
+					style={props.stylies}
+					onClick={props.mouseclick}
+				>
 				   <rect
 					   rx="8.9191856"
 					   ry="8.9457436"
@@ -150,9 +141,7 @@ export default function SinekPapaz(props) {
 					   id="path3442"
 					   />
 				   </g>
-				   </g>
 			   </g>
-		   </svg>
 		   </>
 	);
    }

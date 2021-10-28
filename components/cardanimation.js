@@ -14,50 +14,89 @@ import SinekPapaz2 from './svg_cards/sinekpapaz2.js'
 import SinekPapaz3 from './svg_cards/sinekpapaz3.js'
 import SinekPapaz4 from './svg_cards/sinekpapaz4.js'
 import SinekPapaz5 from './svg_cards/sinekpapaz5.js'
+import SinekPapaz6 from './svg_cards/sinekpapaz6.js'
 
 class CardAnim extends Component {
     constructor(props){
         super(props);
     }
     state = {
+        transformOrigin: 16.6,
+        sliderCounter: 0,
         flips: [
             {
                 hover: false,
-                front: 'perspective(400px) rotateY(0deg) scale(1, 1)',
-                back: 'translate(132px, -385px) scale(0, 0.75) perspective(500px) rotateY(30deg)',
-                transformOrigin: '17.6% 50%'
+                front: 'translate(0px, 0px) rotateY(0deg) scale(1, 1) perspective(400px)',
+                back: 'translate(' + 0*6 + 'px, -497px) scale(0, 0.86) rotateY(30deg)',
+                x: 0,
+                opacity: 1
             },
             {
                 hover: false,
-                front: 'perspective(400px) rotateY(0deg) scale(1, 1)',
-                back: 'translate(132px, -385px) scale(0, 0.75) perspective(500px) rotateY(30deg)',
-                transformOrigin: '34.2% 50% 0px'
+                front: 'translate(0px, 0px) rotateY(0deg) scale(1, 1) perspective(400px)',
+                back: 'translate(' + 1*6 + 'px, -497px) scale(0, 0.86) rotateY(30deg) perspective(400px)',
+                x: 0
                 
             },
             {
                 hover: false,
-                front: 'perspective(400px) rotateY(0deg) scale(1, 1)',
-                back: 'translate(132px, -385px) scale(0, 0.75) perspective(500px) rotateY(30deg)',
-                transformOrigin: '50.7% 50% 0px',
+                front: 'translate(0px, 0px) rotateY(0deg) scale(1, 1) perspective(400px)',
+                back: 'translate(' + 2*6 + 'px, -497px) scale(0, 0.86) rotateY(30deg) perspective(400px)',
+                x: 0
                 
             },
             {
                 hover: false,
-                front: 'perspective(400px) rotateY(0deg) scale(1, 1)',
-                back: 'translate(132px, -385px) scale(0, 0.75) perspective(500px) rotateY(30deg)',
-                transformOrigin: '67.3% 50% 0px',
+                front: 'translate(0px, 0px) rotateY(0deg) scale(1, 1) perspective(400px)',
+                back: 'translate(' + 3*6 + 'px, -497px) scale(0, 0.86) rotateY(30deg) perspective(400px)',
+                x: 0
                 
             },
             {
                 hover: false,
-                front: 'perspective(400px) rotateY(0deg) scale(1, 1)',
-                back: 'translate(132px, -385px) scale(0, 0.75) perspective(500px) rotateY(30deg)',
-                transformOrigin: '83.9% 50% 0px',
+                front: 'translate(0px, 0px) rotateY(0deg) scale(1, 1) perspective(400px)',
+                back: 'translate(' + 4*6 + 'px, -497px) scale(0, 0.86) rotateY(30deg) perspective(400px)',
+                x: 0,
+                opacity: 1
+                
+            },
+            {
+                hover: false,
+                front: 'translate(' + 228*5 + 'px, -400px) rotateY(0deg) scale(1,1) perspective(400px)',
+                back: 'translate(' + 5*6 + 'px, -497px) scale(0, 0.86) rotateY(30deg) perspective(400px)',
+                x: 0
                 
             },
         ]
     }
-    
+    componentDidMount() {
+        // const intervalId = setInterval(()=>{
+        //     (this.state.flips).map((item, i) => {
+                
+        //         let xArr = [...this.state.flips];
+        //         let theX = {};
+        //         if((i+1)*item.x < 1368){
+        //             theX = {
+        //                 ...xArr[i],
+        //                 x: this.state.flips[i].x + 10,
+        //                 ocapicty: 1
+        //             }
+        //         }
+        //         else {
+        //             theX = {
+        //                 ...xArr[i],
+        //                 x: this.state.flips[i].x-1368,
+        //                 ocapicty: 0
+        //             }
+        //         }
+        //         xArr[i] =theX;
+        //         this.setState({
+        //             flips: xArr,
+        //         });
+        //     })
+        // },800/3)
+        // clearInterval(intervalId)
+    }
     handleClick = async (i, e) => {
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -66,9 +105,16 @@ class CardAnim extends Component {
         if(this.state.flips[i].hover!=true){
 
             let flipsFrontArr = [...this.state.flips];
+            let translateIt = '';
+            if(i<5){
+                translateIt = 'translate(' + i*6 + 'px, 0px) rotateY(30deg) scale(0, 1) perspective(400px)'
+            }
+            else {
+                translateIt = 'translate(' + i*6 + 'px, -400px) rotateY(30deg) scale(0, 1) perspective(400px)';
+            }
             let theFlip = {
                 ...flipsFrontArr[i],
-                front: 'perspective(200px) rotateY(45deg) scale(0, 1)',
+                front: translateIt
             }
             flipsFrontArr[i] = theFlip;
             this.setState({
@@ -81,7 +127,7 @@ class CardAnim extends Component {
             let theBackFlip = {
                 ...flipsBackArr[i],
                 hover: true,
-                back: 'translate(132px, -385px) scale(0.87, 0.86) perspective(400px) rotateY(0deg)',
+                back: 'translate(' + (112 + (201*i)) + 'px, -497px) scale(0.875, 0.86) rotateY(0deg) perspective(400px)',
             }
             flipsBackArr[i] = theBackFlip;
             this.setState({
@@ -93,7 +139,7 @@ class CardAnim extends Component {
             let flipsBackArr = [...this.state.flips];
             let theFlip = {
                 ...flipsBackArr[i],
-                back: 'translate(132px, -385px) scale(0 , 0.76) perspective(400px) rotateY(-45deg)',
+                back: 'translate(' + i*6 + 'px, -497px) scale(0 , 0.86) rotateY(30deg) perspective(400px)',
             }
             flipsBackArr[i] = theFlip;
             this.setState({
@@ -102,10 +148,18 @@ class CardAnim extends Component {
             await sleep(400)
             
             let flipsFrontArr = [...this.state.flips];
+            let translateIt = '';
+            if(i<5){
+                translateIt = 'translate(0px, 0px) rotateY(0deg) scale(1, 1) perspective(400px)'
+            }
+            else {
+                translateIt = 'translate(' + 228*i + 'px, -400px) rotateY(0deg) scale(1, 1) perspective(400px)'
+            }
+            
             let theFrontFlip = {
                 ...flipsFrontArr[i],
                 hover: false,
-                front: 'perspective(200px) rotateY(0deg) scale(1, 1)',
+                front: translateIt,
             }
             flipsFrontArr[i] = theFrontFlip;
             this.setState({
@@ -118,109 +172,125 @@ class CardAnim extends Component {
                 <>
                     <div>
                         <svg 
+                            id="card_slider"
                             version="1.1"
+                            width="100%"
                             height="auto" 
-                            viewBox="0 -200 1380 500"
+                            viewBox="120 100 1389 365" 
                         >
+                            <g style={{
+                                transform: 'translate('+ this.state.flips[0].x +'px)',
+                                opacity: this.state.flips[0].opacity
+                            }}>
                                 <CardFirst
                                     mouseclick={this.handleClick.bind(this, 0)}
+                                    classesName={'anim_card_front'} 
                                     stylies ={{
-                                        transformOrigin: this.state.flips[0].transformOrigin,
-                                        transition: '.4s all',
+                                        transformOrigin: '' + this.state.transformOrigin*1+'% 50%',
                                         transform: this.state.flips[0].front,
                                     }}
                                 />
+                                <SinekPapaz1
+                                    mouseclick={this.handleClick.bind(this, 0)}
+                                    stylies={{
+                                        transformOrigin: '' + this.state.transformOrigin*1+'% 50%',
+                                        transform: this.state.flips[0].back
+                                    }}
+                                />
+                            </g>
+                            <g style={{transform: 'translate('+ this.state.flips[1].x +'px)'}}>
                                 <CardSecond
                                     mouseclick={this.handleClick.bind(this, 1)}
+                                    classesName={'anim_card_front'} 
                                     stylies ={{
-                                        transformOrigin: this.state.flips[1].transformOrigin,
-                                        transition: '.4s all',
+                                        transformOrigin: '' + this.state.transformOrigin*2+'% 50%',
                                         transform: this.state.flips[1].front,
                                     }}
                                 />
+                                <SinekPapaz2
+                                    mouseclick={this.handleClick.bind(this, 1)}
+                                    stylies={{
+                                        transformOrigin: '' + this.state.transformOrigin*2+'% 50%',
+                                        transform: this.state.flips[1].back
+                                    }}
+                                />
+
+                            </g>
+                            <g style={{transform: 'translate('+ this.state.flips[2].x +'px)'}}>
                                 <CardThird
                                     mouseclick={this.handleClick.bind(this, 2)}
+                                    classesName={'anim_card_front'} 
                                     stylies ={{
-                                        transformOrigin: this.state.flips[2].transformOrigin,
-                                        transition: '.4s all',
+                                        transformOrigin: '' + this.state.transformOrigin*3+'% 50%',
                                         transform: this.state.flips[2].front,
                                     }}
                                 />
+                                <SinekPapaz3
+                                    mouseclick={this.handleClick.bind(this, 2)}
+                                    stylies={{
+                                        transformOrigin: '' + this.state.transformOrigin*3+'% 50%',
+                                        transform: this.state.flips[2].back
+                                    }}
+                                />
+
+                            </g>
+                            <g style={{transform: 'translate('+ this.state.flips[3].x +'px)'}}>
                                 <CardFourth
                                     mouseclick={this.handleClick.bind(this, 3)}
+                                    classesName={'anim_card_front'} 
                                     stylies ={{
-                                        transformOrigin: this.state.flips[3].transformOrigin,
-                                        transition: '.4s all',
+                                        transformOrigin: '' + this.state.transformOrigin*4+'% 50%',
                                         transform: this.state.flips[3].front,
                                     }}
                                 />
+                                <SinekPapaz4
+                                    mouseclick={this.handleClick.bind(this, 3)}
+                                    stylies={{
+                                        transformOrigin: '' + this.state.transformOrigin*4+'% 50%',
+                                        transform: this.state.flips[3].back
+                                    }}
+                                />
+
+                            </g>
+                            <g style={{
+                                transform: 'translate('+ this.state.flips[4].x +'px)',
+                                opacity: this.state.flips[4].opacity
+                                }}>
                                 <CardFifth
                                     mouseclick={this.handleClick.bind(this, 4)}
+                                    classesName={'anim_card_front'} 
                                     stylies ={{
-                                        transformOrigin: this.state.flips[4].transformOrigin,
-                                        transition: '.4s all',
+                                        transformOrigin: '' + this.state.transformOrigin*5+'% 50%',
                                         transform: this.state.flips[4].front,
                                     }}
                                 />
+                                <SinekPapaz5
+                                    mouseclick={this.handleClick.bind(this, 4)}
+                                    stylies={{
+                                        transformOrigin: '' + this.state.transformOrigin*5+'% 50%',
+                                        transform: this.state.flips[4].back
+                                    }}
+                                />
+
+                            </g>
+                            <g style={{transform: 'translate('+ this.state.flips[5].x +'px)'}}>
+                                <CardSixth
+                                    mouseclick={this.handleClick.bind(this, 5)}
+                                    classesName={'anim_card_front'} 
+                                    stylies ={{
+                                        transformOrigin: '' + this.state.transformOrigin*6+'% 50%',
+                                        transform: this.state.flips[5].front,
+                                    }}
+                                />
+                                <SinekPapaz6
+                                    mouseclick={this.handleClick.bind(this, 5)}
+                                    stylies={{
+                                        transformOrigin: '' + this.state.transformOrigin*6+'% 50%',
+                                        transform: this.state.flips[5].back
+                                    }}
+                                />
+                                </g>
                         </svg>
-                        <svg 
-                            version="1.1"
-                            height="auto" 
-                            viewBox="77 -200 1380 500"
-                        >
-                            <g>
-                        <SinekPapaz1
-                            width="234"
-                            height="333.00003"
-                            mouseclick={this.handleClick.bind(this, 0)}
-                            stylies={{
-                                transformOrigin: '50% 50%',
-                                transition: '.4s all',
-                                transform: this.state.flips[0].back
-                            }}
-                        />
-                        <SinekPapaz2
-                            width="234"
-                            height="333.00003"
-                            mouseclick={this.handleClick.bind(this, 1)}
-                            stylies={{
-                                transformOrigin: '50% 50%',
-                                transition: '.4s all',
-                                transform: this.state.flips[1].back
-                            }}
-                        />
-                        <SinekPapaz3
-                            width="234"
-                            height="333.00003"
-                            mouseclick={this.handleClick.bind(this, 2)}
-                            stylies={{
-                                transformOrigin: '50% 50%',
-                                transition: '.4s all',
-                                transform: this.state.flips[2].back
-                            }}
-                        />
-                        <SinekPapaz4
-                            width="234"
-                            height="333.00003"
-                            mouseclick={this.handleClick.bind(this, 3)}
-                            stylies={{
-                                transformOrigin: '50% 50%',
-                                transition: '.4s all',
-                                transform: this.state.flips[3].back
-                            }}
-                        />
-                        <SinekPapaz5
-                            width="234"
-                            height="333.00003"
-                            mouseclick={this.handleClick.bind(this, 4)}
-                            stylies={{
-                                transformOrigin: '50% 50%',
-                                transition: '.4s all',
-                                transform: this.state.flips[4].back
-                            }}
-                        />
-                        </g>
-                    </svg>
                     </div>
                 </>
     );

@@ -1,8 +1,11 @@
 export default function CardFirst(props) {
 
     return (
-        <g
-        id="anim_cards">
+            <g
+                className={props.classesName}
+                onClick={props.mouseclick}
+                style={props.stylies}
+            >
             <path fill="#030202" d="M343.625,558.123c0-5.565-4.513-10.077-10.078-10.077l0,0H152.122l0,0l0,0
                 c-5.566,0-10.079,4.512-10.079,10.077l0,0v262.058c0,5.566,4.513,10.079,10.079,10.079c0.007,0,0.015,0,0.022,0h181.379
                 c0.008,0,0.016,0,0.022,0c5.566,0,10.079-4.513,10.079-10.079V558.123L343.625,558.123z"/>

@@ -13,11 +13,6 @@ import CardSecond from './svg_cards/CardSecond.js'
 import CardThird from './svg_cards/CardThird.js'
 import CardFourth from './svg_cards/CardFourth.js'
 import CardFifth from './svg_cards/CardFifth.js'
-import CardSixth from './svg_cards/CardSixth.js'
-import CardSeventh from './svg_cards/CardSeventh.js'
-import CardEighth from './svg_cards/CardEighth.js'
-import CardNinth from './svg_cards/CardNinth.js'
-import CardTenth from './svg_cards/CardTenth.js'
 import styles from "../styles/jss/style.js"
 import { makeStyles } from "@material-ui/core/styles";
 
