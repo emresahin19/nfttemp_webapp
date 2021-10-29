@@ -7,21 +7,7 @@ import styles from "../../styles/jss/style.js"
 const useStyles = makeStyles(styles);
 
 export default function Parallax(props) {
-  const [transform, setTransform] = React.useState("translate3d(0,0px,0)");
-  React.useEffect(() => {
-    if (window.innerWidth >= 768) {
-      window.addEventListener("scroll", resetTransform);
-    }
-    return function cleanup() {
-      if (window.innerWidth >= 768) {
-        window.removeEventListener("scroll", resetTransform);
-      }
-    };
-  });
-  const resetTransform = () => {
-    var windowScrollTop = window.pageYOffset / 3;
-    setTransform("translate3d(0," + windowScrollTop + "px,0)");
-  };
+  
   const {
     filter,
     className,
@@ -45,7 +31,7 @@ export default function Parallax(props) {
       style={{
         ...style,
         backgroundImage: "url(" + image + ")",
-        transform: transform,
+        transform: "translate3d(0," + props.scrolly/3 + "px,0)",
       }}
     >
       {children}

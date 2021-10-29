@@ -28,6 +28,14 @@
         --card-first: #720000;
         --card-second: #ff4b2f;
     }
+
+    .main-raised {
+        margin: -60px 30px 0px;
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+        background: #FFFFFF;
+        position: relative;
+        z-index: 3;
+    }
     .nav-item-a{
         color: var(--main) !important;
         display: block;
@@ -355,6 +363,7 @@
     .main-container-curve{
         width: 50%;
         position: absolute;
+        z-index: -1;
     }
     .main-container-curve::after,
     .main-container-curve::before {
@@ -377,4 +386,56 @@
         right: -73px;
         transform: rotatey(180deg) rotateZ(-90deg);
     }
+    .maca-flips {
+        transform-origin: 0% 0%;
+        -webkit-transition:  transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -moz-transition:  transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -o-transition:  transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -ms-transition:  transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        transition: transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+    }
+    .maca-flips .backs{
+        transform-origin: 33.3% 37%;
+        -webkit-transition:  transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -moz-transition:  transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -o-transition:  transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -ms-transition:  transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        transition: transform 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        cursor: pointer;
+    }
+    .main-raised::after {
+        content: '';
+        width: 2px;
+        height: 100%;
+        background: #ddd;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        top: 0px;
+    }
+    .karma-img {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        top: 70px;
+    }
+    #karma_svg {
+        transform-origin: 50% 37%;
+        -webkit-transition:  all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -moz-transition:  all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -o-transition:  all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -ms-transition:  all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        transition: all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+    }
+    .about-row{
+        -webkit-transition:  all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -moz-transition:  all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -o-transition:  all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        -ms-transition:  all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+        transition: all 0.5s cubic-bezier(.79,.14,.15,.86) !important;
+    }
+    .h-3 {
+        font-size: 50px;
+    }
+
     

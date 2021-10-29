@@ -16,7 +16,7 @@ import SinekPapaz4 from './svg_cards/sinekpapaz4.js'
 import SinekPapaz5 from './svg_cards/sinekpapaz5.js'
 import SinekPapaz6 from './svg_cards/sinekpapaz6.js'
 
-class CardAnim extends Component {
+class CardAnimation extends Component {
     constructor(props){
         super(props);
     }
@@ -29,7 +29,6 @@ class CardAnim extends Component {
                 front: 'translate(0px, 0px) rotateY(0deg) scale(1, 1) perspective(400px)',
                 back: 'translate(' + 0*6 + 'px, -497px) scale(0, 0.86) rotateY(30deg)',
                 x: 0,
-                opacity: 1
             },
             {
                 hover: false,
@@ -57,8 +56,6 @@ class CardAnim extends Component {
                 front: 'translate(0px, 0px) rotateY(0deg) scale(1, 1) perspective(400px)',
                 back: 'translate(' + 4*6 + 'px, -497px) scale(0, 0.86) rotateY(30deg) perspective(400px)',
                 x: 0,
-                opacity: 1
-                
             },
             {
                 hover: false,
@@ -180,16 +177,7 @@ class CardAnim extends Component {
                         >
                             <g style={{
                                 transform: 'translate('+ this.state.flips[0].x +'px)',
-                                opacity: this.state.flips[0].opacity
                             }}>
-                                <CardFirst
-                                    mouseclick={this.handleClick.bind(this, 0)}
-                                    classesName={'anim_card_front'} 
-                                    stylies ={{
-                                        transformOrigin: '' + this.state.transformOrigin*1+'% 50%',
-                                        transform: this.state.flips[0].front,
-                                    }}
-                                />
                                 <SinekPapaz1
                                     mouseclick={this.handleClick.bind(this, 0)}
                                     stylies={{
@@ -261,7 +249,6 @@ class CardAnim extends Component {
                                     classesName={'anim_card_front'} 
                                     stylies ={{
                                         transformOrigin: '' + this.state.transformOrigin*5+'% 50%',
-                                        transform: this.state.flips[4].front,
                                     }}
                                 />
                                 <SinekPapaz5
@@ -298,4 +285,4 @@ class CardAnim extends Component {
     
 }
 
-export default CardAnim;
+export default CardAnimation;
