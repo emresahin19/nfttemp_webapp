@@ -195,7 +195,7 @@ export default function CardFirst(props) {
                         c0.31,0,0.561,0.249,0.561,0.56C321.559,309.297,321.308,309.549,320.998,309.549z"/>
                     <path fill="#FFFFFF" d="M174.109,291.63h-15.849c-0.31,0-0.56-0.25-0.56-0.56s0.25-0.561,0.56-0.561h15.849
                         c0.31,0,0.561,0.251,0.561,0.561S174.419,291.63,174.109,291.63z"/>
-                    <path fill="#FFFFFF" stroke="#A01C37" stroke-width="1.1199" stroke-linecap="round" stroke-miterlimit="10" d="M174.109,291.07"
+                    <path fill="#FFFFFF" stroke="#A01C37" strokeWidth="1.1199" strokeLinecap="round" strokeMiterlimit="10" d="M174.109,291.07"
                         />
                     <path fill="#FFFFFF" d="M327.33,291.63h-15.848c-0.31,0-0.56-0.25-0.56-0.56s0.25-0.561,0.56-0.561h15.848
                         c0.31,0,0.561,0.251,0.561,0.561S327.64,291.63,327.33,291.63z"/>

@@ -3,8 +3,8 @@ import MacaAs from '../components/svg_cards/macaas.js';
 import MacaPapaz from '../components/svg_cards/macapapaz.js';
 import MacaKiz from '../components/svg_cards/macakiz.js';
 import MacaBacak from '../components/svg_cards/macabacak.js';
-import Backflip from '../components/svg_cards/backflip.js';
 import MacaOn from '../components/svg_cards/macaon.js';
+import Backflip from '../components/svg_cards/backflip.js';
 
 class CardAnim extends Component {
     constructor(props){
@@ -13,7 +13,7 @@ class CardAnim extends Component {
             this.setState({
                 deal: true
             })
-        }, 100);
+        }, 500);
 
     }
     state = {
@@ -145,6 +145,7 @@ class CardAnim extends Component {
                                 version="1.1"
                                 viewBox="-50 -50 311 398"
                                 height="auto"
+                                key={index}
                                 width={this.state.width}
                                 onClick={this.handleClick.bind(this, index)}
                                 style={

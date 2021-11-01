@@ -1,9 +1,9 @@
 export default function Karma (props) {
     return (
-        <>
-            <svg id="karma_svg" viewBox="-100 0 420 346" height="auto" width="100%"
+        <div style={{display: 'grid', justifyContent:'center'}}>
+            <svg id="karma_svg" viewBox="-100 0 420 346" height={props.height} width={props.width}
                     style={{
-                        transform: 'perspective(1000px) rotateY(' + (props.scrolly<=100 ? 90 : 0) +'deg)'
+                        transform: 'perspective(1000px) rotateY(' + (props.scrolly<=400 ? 90 : 0) +'deg)'
                     }}>
                 <g transform="translate(0,49)" id="layer1">
                     <g
@@ -2390,6 +2390,6 @@ export default function Karma (props) {
                     </g>
                 </g>
             </svg>
-        </>
+        </div>
     )
 }
