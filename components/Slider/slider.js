@@ -25,7 +25,7 @@ class Nftslider extends Component {
   
   render(){
     return (
-        <Row className="px-4 slider-row" style={{paddingTop: this.props.scrolly<=750 ? 200 : 0}}>
+        <Row id="Rarity" className="px-4 slider-row" style={{paddingTop: this.props.scrolly<=750 ? 200 : 0}}>
           <Col md="6" className="about-main">
             <span>
               <h1 className="about-text text-center">How Rare Is My Playing Card</h1>
@@ -47,7 +47,7 @@ class Nftslider extends Component {
             <Carousel loop axis="x" className="custom-class">
               {this.state.images.map((item,index) => {
                 return (
-                  <div className="mx-auto">
+                  <div className="mx-auto w-100">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         key={index}

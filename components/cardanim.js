@@ -70,11 +70,9 @@ class CardAnim extends Component {
     }
     
     componentDidMount() {
-       
         this.setState({
             width: (window.innerWidth-30)/5
         })
-
     }
     
     frontFlip = async (i) => {

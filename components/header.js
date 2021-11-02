@@ -200,29 +200,14 @@ class Header extends Component {
                                 return (
                                     <NavItem className={this.state.screenWidth ? "m-dropdown-main" : "d-dropdown-main" + " mx-auto"} key={index}>
                                         <a 
-                                            href="#"
+                                            href={"/#"+ item.name}
                                             onMouseOver={this.handleMouseOver.bind(this, index)}
                                             onMouseOut={this.handleMouseOut.bind(this, index)}
                                             className={item.hover ? 'nav-item-a hover' : 'nav-item-a'}
                                         >
                                             { item.name.charAt(0).toUpperCase() + item.name.slice(1) }
                                         </a>
-                                        <ul className={"d-dropdown-menu " + (this.state.hover && !item.hover ? "show" : "")}>
-                                            {this.state.titles.map((item, index) => {
-                                                return (
-                                                    <NavItem className="mx-auto" key={index}>
-                                                        <a 
-                                                            onMouseOver={this.handleMouseOver.bind(this, this.state.index)}
-                                                            onMouseOut={this.handleMouseOut.bind(this, this.state.index)}
-                                                            className={this.state.hover ? 'nav-item-detail' : 'nav-item-detail hover'}
-                                                            href="#"
-                                                        >
-                                                            {item}
-                                                        </a>
-                                                    </NavItem>
-                                                );
-                                            })}
-                                        </ul>
+                                        
                                     </NavItem>
                                 );
                             })}

@@ -180,7 +180,6 @@
         stroke-dasharray: 1px 220px;
     }
     /* hamburger */
-    
     .logo-before::before {
         content: '';
         background: var(--background);
@@ -231,7 +230,22 @@
     .logo-right-top::before {
         right: 0;
         box-shadow: 50px -50px 0 0 var(--background);
-    }
+    } 
+
+    /* 
+    clip-path: polygon(0px 0px,100% 0,100% 60%,50% 100%,0px 60%);
+            .opened-header::before {
+            width: 44%;
+            content: '';
+            height: 50px;
+            position: fixed;
+            top: 0;
+            background: var(--background);
+            transform: rotatez(5deg);
+            left: 0;
+            transform-origin: 0% 0%;
+        }
+    */
     .closed-header {
         height: 50px;
         transition: height .3s cubic-bezier(.79,.14,.15,.86);
@@ -492,16 +506,16 @@
 
     .social-media {
         padding: 12px;
-        border: 1px solid rgb(86, 52, 209);
+        border: 1px solid var(--main);
         border-radius: 4px;
         font-size: 22px;
         cursor: pointer;
-        color: rgb(86, 52, 209);
+        color: var(--main);
         transition: all 0.5s cubic-bezier(.79,.14,.15,.86);
         position: relative;
     }
     .social-media:hover {
-        background: rgb(86, 52, 209);
+        background: var(--main);
         color: #fff;
     }
     .social-buttons {
@@ -616,7 +630,7 @@
         padding-right: 4rem !important;
         padding-left: 4rem !important;
     }
-    .faq-text {
+    .faq-text, .faq-h3 svg, .faq-h3  {
         -webkit-transition:  all 0.3s cubic-bezier(.86,0,.07,1) !important;
         -moz-transition:  all 0.3s cubic-bezier(.86,0,.07,1) !important;
         -o-transition:  all 0.3s cubic-bezier(.86,0,.07,1) !important;
@@ -626,4 +640,33 @@
     }
     .faq-h3 {
         cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .faq-h3:hover {
+        letter-spacing: 1px;
+    }
+    .closedHeight {
+        max-height: 0;
+    }
+    .openedHeight {
+        max-height: 500px;
+    }
+    /* @keyframes heightAnim {
+        0%   {height: 0px;}
+        100%  {height: 100px;}
+        
+    } */
+    .question-arrow-opened{
+        margin-left: 8px;
+        margin-top: 4px;
+        transform: rotateZ(-90deg);
+    }
+    .question-arrow-closed  {
+        margin-left: 8px;
+        margin-top: 4px;
+        transform: rotateZ(0deg);
     }

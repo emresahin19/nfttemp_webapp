@@ -3,7 +3,8 @@ import {
     Row,
     Col,
   } from "reactstrap";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 const answers = [
     {
         question: 'What is NFT?',
@@ -34,6 +35,7 @@ const answers = [
         answer:'https://fluffypolarbears.medium.com/fluffy-stories-3-arctic-island-travel-details-a956ca67d43e',
     }
 ]
+
 class Faq extends Component{
     constructor(props){
         super(props);
@@ -42,24 +44,38 @@ class Faq extends Component{
         questions: [
             {
                 opened: false,
+                question: answers[0].question,
+                answer: answers[0].answer
             },
             {
                 opened: false,
+                question: answers[1].question,
+                answer: answers[1].answer
             },
             {
                 opened: false,
+                question: answers[2].question,
+                answer: answers[2].answer
             },
             {
                 opened: false,
+                question: answers[3].question,
+                answer: answers[3].answer
             },
             {
                 opened: false,
+                question: answers[4].question,
+                answer: answers[4].answer
             },
             {
                 opened: false,
+                question: answers[5].question,
+                answer: answers[5].answer
             },
             {
                 opened: false,
+                question: answers[6].question,
+                answer: answers[6].answer
             }
         ]
     }
@@ -77,14 +93,17 @@ class Faq extends Component{
     render(){
         return(
             <>
-                <Row className="faq-row">
+                <Row id="FAQ" className="faq-row">
                     <Col md="12" className="faq-main p-relative">
                         <h1 className="faq-text text-center mt-4">F.A.Q</h1>
-                        {answers.map((item,index) => {
+                        {this.state.questions.map((item,index) => {
                             return (
-                                <div key={index} className="lead px-5 mx-2 pt-2">
-                                    <h3 className="faq-h3" onClick={this.handleChange.bind(this, index)}>{item.question}</h3>
-                                    <div className="faq-text p-relative" style={{height: this.state.questions[index].opened ? '100%' : 0}}>
+                                <div key={index} className="lead calc-px-5 mx-2 pt-2">
+                                    <h3 className="faq-h3 d-flex" onClick={this.handleChange.bind(this, index)}>
+                                        {item.question}
+                                        <FontAwesomeIcon className={item.opened ? 'question-arrow-closed' : 'question-arrow-opened'} icon={faAngleDown} />
+                                    </h3>
+                                    <div className={'faq-text p-relative p-1 px-2 ' + (item.opened ? 'openedHeight' : 'closedHeight')}>
                                         {item.answer}
                                     </div>
                                 </div>
@@ -93,6 +112,7 @@ class Faq extends Component{
                         
                     </Col>
                 </Row>
+                <Row style={{height: 500}}></Row>
             </>
         );
     }
