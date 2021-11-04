@@ -93,26 +93,30 @@ class Faq extends Component{
     render(){
         return(
             <>
+                <Row style={{height: 200}}></Row>
                 <Row id="FAQ" className="faq-row">
-                    <Col md="12" className="faq-main p-relative">
-                        <h1 className="faq-text text-center mt-4">F.A.Q</h1>
-                        {this.state.questions.map((item,index) => {
-                            return (
-                                <div key={index} className="lead calc-px-5 mx-2 pt-2">
-                                    <h3 className="faq-h3 d-flex" onClick={this.handleChange.bind(this, index)}>
-                                        {item.question}
-                                        <FontAwesomeIcon className={item.opened ? 'question-arrow-closed' : 'question-arrow-opened'} icon={faAngleDown} />
-                                    </h3>
-                                    <div className={'faq-text p-relative p-1 px-2 ' + (item.opened ? 'openedHeight' : 'closedHeight')}>
-                                        {item.answer}
+                    <Col md="12" className="p-relative">
+                        <h1 className="faq-text text-center mt-4 main-h1 mb-4">F.A.Q</h1>
+                        <div className="faq-main">
+                            {this.state.questions.map((item,index) => {
+                                return (
+                                    <div key={index} className="faq-items lead mx-2 pt-1" 
+                                        style={{transform: this.props.scrolltop ? 'scaley(0)' : 'scaley(1)'}}
+                                    >
+                                        <h4 className="faq-h3 d-flex" onClick={this.handleChange.bind(this, index)}>
+                                            {item.question}
+                                            <FontAwesomeIcon className={item.opened ? 'question-arrow-closed' : 'question-arrow-opened'} icon={faAngleDown} />
+                                        </h4>
+                                        <div className={'faq-text p-relative p-1 px-2 ' + (item.opened ? 'openedHeight' : 'closedHeight')}>
+                                            {item.answer}
+                                        </div>
                                     </div>
-                                </div>
-                            );
-                        })}
-                        
+                                );
+                            })}
+                        </div>
                     </Col>
                 </Row>
-                <Row style={{height: 500}}></Row>
+                <Row style={{height: 200}}></Row>
             </>
         );
     }

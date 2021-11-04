@@ -19,21 +19,21 @@ export default function Promotion(props){
                         </div>
                         <span className="social-media"
                             style={{
-                                left: props.scrolly<=100 ? -75 : 0
+                                left: props.scrolltop ? -75 : 0
                             }}
                         >
                             <FontAwesomeIcon icon={faTwitter} />
                         </span>
                         <span className="social-media mx-2"
                             style={{
-                                bottom: props.scrolly<=100 ? -75 : 0
+                                bottom: props.scrolltop ? -75 : 0
                             }}
                         >
                             <FontAwesomeIcon icon={faFacebook} />
                         </span>
                         <span className="social-media"
                             style={{
-                                right: props.scrolly<=100 ? -75 : 0
+                                right: props.scrolltop ? -75 : 0
                             }}
                         >
                             <FontAwesomeIcon icon={faDiscord} />

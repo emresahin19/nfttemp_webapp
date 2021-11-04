@@ -3,12 +3,12 @@ export default function Karma (props) {
         <div style={{display: 'grid', justifyContent:'center'}}>
             <svg id="karma_svg" viewBox="-100 0 420 346" height={props.height} width={props.width}
                     style={{
-                        transform: 'perspective(1000px) rotateY(' + (props.scrolly<=400 ? 90 : 0) +'deg)'
+                        transform: 'perspective(1000px) rotateY(' + (props.scrolltop ? 90 : 0) +'deg)'
                     }}>
                 <g transform="translate(0,49)" id="layer1">
                     <g
-                    transform="matrix(0.35277777,0,0,0.35277777,35.537341,17.950518)"
-                    id="surface4952"
+                        transform="matrix(0.35277777,0,0,0.35277777,35.537341,17.950518)"
+                        id="surface4952"
                     >
                     <path
                         style={{
