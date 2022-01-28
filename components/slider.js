@@ -60,11 +60,14 @@ const Slider = ({ deviceType }) => {
                 >
                 {images.map(image => {
                     return (
-                    <img
-                        draggable={false}
-                        style={{ width: "100%", height: "100%" }}
-                        src={image}
-                    />
+                      <>
+                        <img
+                          draggable={false}
+                          style={{ width: "100%", height: "100%" }}
+                          src={image}
+                        />
+                      </>
+                    
                     );
                 })}
                 </Carousel>

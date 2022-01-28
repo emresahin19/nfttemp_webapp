@@ -47,9 +47,9 @@ class Rarity extends Component {
             <Carousel loop axis="x" className="custom-class" auto={true} interval={3000}>
               {this.state.images.map((item,index) => {
                 return (
+                  // eslint-disable-next-line react/jsx-key
                   <div className="mx-auto w-100">
                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
                         key={index}
                         className="maca-flips"
                         version="1.1"

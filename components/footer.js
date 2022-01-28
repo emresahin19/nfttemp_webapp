@@ -19,7 +19,6 @@ class Footer extends Component {
                         style={{
                             height: 350,
                             marginTop: 100,
-                            background: 'yellow'
                         }}>
 
                     </Col>

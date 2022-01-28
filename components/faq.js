@@ -97,7 +97,7 @@ class Faq extends Component{
                 <Row id="FAQ" className="faq-row">
                     <Col md="12" className="p-relative">
                         <h1 className="faq-text text-center mt-4 main-h1 mb-4">F.A.Q</h1>
-                        <div className="faq-main">
+                        <Col md='6' className="faq-main">
                             {this.state.questions.map((item,index) => {
                                 return (
                                     <div key={index} className="faq-items lead mx-2 pt-1" 
@@ -113,7 +113,7 @@ class Faq extends Component{
                                     </div>
                                 );
                             })}
-                        </div>
+                        </Col>
                     </Col>
                 </Row>
                 <Row style={{height: 200}}></Row>
